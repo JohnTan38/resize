@@ -1,0 +1,26 @@
+[package]
+name = "reduce_image_size"
+version = "0.2.1"
+edition = "2021"
+authors = ["Ivan Lazarević"]
+description = "Reduces size of images in a folder (and optionally sub-folders, recursively)."
+repository = "https://github.com/ivanbgd/reduce-image-size-rust"
+license = "MIT"
+keywords = ["image", "images", "photo", "jpeg", "png"]
+categories = ["computer-vision", "multimedia", "multimedia::images", "command-line-utilities"]
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "reduce_image_size"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+fast_image_resize = "2.7.3"
+image = "0.24.7"
+oxipng = { version = "9.0", default-features = false, features = ["parallel"] }
+pathdiff = { version="0.2.1" }
+turbojpeg = { version = "0.5", features = ["image"] }
+walkdir = "2"
